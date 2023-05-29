@@ -1,6 +1,8 @@
 import 'foodItemWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_final/screens/newMeal.dart';
 import 'package:flutter_application_final/screens/listItme.dart';
+import 'package:flutter_application_final/screens/EditProfile.dart';
 
 class Category extends StatelessWidget {
   @override
@@ -8,12 +10,10 @@ class Category extends StatelessWidget {
     // TODO: implement build
 
     List g = [
-      FoodItemWidget("Sweets", 'assets/images/donut-icon.png'),
-      FoodItemWidget("Snacks", 'assets/images/snacks-icon.png'),
-      FoodItemWidget("Cold Drinks", 'assets/images/drink-icon.png'),
-      FoodItemWidget("Hot Drinks", 'assets/images/coffee-icon.png'),
-      FoodItemWidget("Pizza", 'assets/images/pizza-food-icon.png'),
-      FoodItemWidget("sandwich", 'assets/images/burger-fries-icon.png')
+      FoodItemWidget("Sandwich", 'assets/images/donut-icon.png'),
+      FoodItemWidget("Add New Food", 'assets/images/add.png'),
+      FoodItemWidget("Profile", 'assets/images/user.png'),
+
     ];
 
     return Expanded(
@@ -27,10 +27,23 @@ class Category extends StatelessWidget {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ListItem()),
-                );
+                if (index == 0) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ListItem()),
+                  );
+                } else if (index == 1) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NewMeal()),
+                  );
+                } else if (index == 2) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EditProfile()),
+                  );
+                }
+
                 // To do
               },
               child: Container(

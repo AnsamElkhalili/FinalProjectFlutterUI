@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_final/screens/Cart.dart';
 import 'package:flutter_application_final/screens/home.dart';
+import 'package:flutter_application_final/screens/newMeal.dart';
 
 class EditProfile extends StatefulWidget {
   @override
@@ -171,13 +172,13 @@ class _EditProfileState extends State<EditProfile> {
           children: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.shopping_cart,
+                Icons.add_card,
                 color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Cart()),
+                  MaterialPageRoute(builder: (context) => NewMeal()),
                 );
               },
             ),

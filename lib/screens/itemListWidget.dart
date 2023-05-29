@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_application_final/meal.dart';
 
 class ItemListWidget extends StatelessWidget {
-  String image;
-  String name;
-  num price;
-  num count;
+  // String image;
+  // String name;
+  // num price;
+  // num count;
 
-  ItemListWidget(
-      {required this.name,
-      required this.image,
-      required this.price,
-      required this.count});
+  // ItemListWidget(
+  //     {required this.name,
+  //     required this.image,
+  //     required this.price,
+  //     required this.count});
+
+final Meal meal;
+
+  const ItemListWidget(this.meal, {Key? key});
+
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -25,14 +33,14 @@ class ItemListWidget extends StatelessWidget {
         width: double.infinity,
         child: Row(
           children: [
-            Image.asset(this.image),
+            Image.asset(meal.image.toString()),
             SizedBox(
               width: 10,
             ),
             Column(
               children: [
-                Text(this.name),
-                Text(this.price.toString()),
+                Text(meal.name.toString()),
+                Text(meal.price.toString()),
               ],
             )
           ],

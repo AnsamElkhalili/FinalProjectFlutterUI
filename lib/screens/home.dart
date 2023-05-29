@@ -3,6 +3,7 @@ import 'banner_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_final/screens/Cart.dart';
+import 'package:flutter_application_final/screens/newMeal.dart';
 import 'package:flutter_application_final/screens/category.dart';
 import 'package:flutter_application_final/screens/appbanner.dart';
 import 'package:flutter_application_final/screens/EditProfile.dart';
@@ -142,13 +143,13 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.shopping_cart,
+                Icons.add_card,
                 color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Cart()),
+                  MaterialPageRoute(builder: (context) => NewMeal()),
                 );
               },
             ),
